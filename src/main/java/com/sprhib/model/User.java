@@ -16,10 +16,17 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
+<<<<<<< Updated upstream
   
     @GeneratedValue
     private Integer id;
   @Id
+=======
+
+    @GeneratedValue
+    private Integer id;
+    @Id
+>>>>>>> Stashed changes
     private String name;
 
     private String email;
