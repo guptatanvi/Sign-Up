@@ -15,7 +15,7 @@
 <h1>Edit user details</h1>
 
 <p>${message}</p>
-<form:form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/edit/${user.id}.html">
+<form:form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/edit/${user.name}.html">
 <table>
 <tbody>
 <tr>
