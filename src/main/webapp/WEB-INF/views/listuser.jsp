@@ -26,7 +26,7 @@
             <td>${user.email}</td>
             <td>${user.pw}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/user/edit">Edit</a><br/>
+                <a href="${pageContext.request.contextPath}/user/edit/${user.name}.html">Edit</a><br/>
                 <a href="${pageContext.request.contextPath}/user/delete/${user.name}.html">Delete</a><br/>
             </td>
         </tr>
