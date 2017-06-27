@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1>List of Users</h1>
-<table>
+<table border="1px" cell-padding="2px">
     <thead>
     <tr>
         <th>Name</th><th>Email</th><th>Password</th>
