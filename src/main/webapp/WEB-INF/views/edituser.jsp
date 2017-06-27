@@ -12,8 +12,8 @@
 <title>Edit user page</title>
 </head>
 <body>
-<h1>Edit team page</h1>
-<p>Here you can edit the existing team.</p>
+<h1>Edit user details</h1>
+
 <p>${message}</p>
 <form:form method="POST" commandName="user" action="${pageContext.request.contextPath}/user/edit/${user.id}.html">
 <table>
