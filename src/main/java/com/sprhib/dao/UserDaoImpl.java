@@ -16,6 +16,7 @@ import com.sprhib.model.User;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
+@Transactional
 public class UserDaoImpl implements UserDao {
 
     @Autowired
@@ -31,20 +32,21 @@ public class UserDaoImpl implements UserDao {
     }
 
     public void updateUser(User user){
-        User userToUpdate=getUser(user.getName());
+        User userToUpdate=getUser(user.getId());
         userToUpdate.setId(user.getId());
         userToUpdate.setName(user.getName());
         userToUpdate.setEmail(user.getEmail());
         userToUpdate.setPw(user.getPw());
+
         getCurrentSession().update(userToUpdate);
     }
-    public User getUser(String name){
-        User user=(User) getCurrentSession().get(User.class, name);
+    public User getUser(Integer id){
+        User user=(User) getCurrentSession().get(User.class, id);
         return user;
     }
 
-    public void deleteUser(String name) {
-        User user=getUser(name);
+    public void deleteUser(Integer id) {
+        User user=getUser(id);
         if(user!=null)
             getCurrentSession().delete(user);
     }
