@@ -16,10 +16,10 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    @Id
+  
     @GeneratedValue
     private Integer id;
-
+  @Id
     private String name;
 
     private String email;
