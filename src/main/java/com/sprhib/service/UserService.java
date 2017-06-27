@@ -9,7 +9,7 @@ import com.sprhib.model.User;
 public interface UserService {
     public void addUser(User user);
     public void updateUser(User user);
-    public User getUser(String name);
-    public void deleteUser(String name);
+    public User getUser(Integer id);
+    public void deleteUser(Integer id);
     public List<User> getUsers();
 }
