@@ -4,6 +4,7 @@ import com.sprhib.model.User;
 import com.sprhib.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
  * Created by tanvigupta on 23/06/17.
  */
 @Component
+@Service
+@Transactional
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
@@ -29,13 +32,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(String name) {
-        return userDao.getUser(name);
+    public User getUser(Integer id) {
+        return userDao.getUser(id);
     }
 
     @Override
-    public void deleteUser(String name) {
-        userDao.deleteUser(name);
+    public void deleteUser(Integer id) {
+        userDao.deleteUser(id);
     }
 
     @Override
