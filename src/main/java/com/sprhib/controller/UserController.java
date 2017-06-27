@@ -52,15 +52,15 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/edit/{name}", method=RequestMethod.GET)
-    public ModelAndView editUserPage(@PathVariable String name) {
+    @RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+    public ModelAndView editUserPage(@PathVariable String id) {
         ModelAndView modelAndView = new ModelAndView("edituser");
-        User user = userService.getUser(name);
+        User user = userService.getUser(Integer.parseInt(id));
         modelAndView.addObject("user",user);
         return modelAndView;
     }
-    @RequestMapping(value="/edit/{name}", method=RequestMethod.POST)
-    public ModelAndView editingUser(@ModelAttribute User user, @PathVariable String name) {
+    @RequestMapping(value="/edit/{id}", method=RequestMethod.POST)
+    public ModelAndView editingUser(@ModelAttribute User user) {
 
         ModelAndView modelAndView = new ModelAndView("home");
 
@@ -72,10 +72,10 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/delete/{name}", method = RequestMethod.GET)
-    public ModelAndView deleteUser(@PathVariable String name){
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView deleteUser(@PathVariable String id){
         ModelAndView modelAndView=new ModelAndView("home");
-        userService.deleteUser(name);
+        userService.deleteUser(Integer.parseInt(id));
         String message="Successfully deleted.";
         modelAndView.addObject("message",message);
         return modelAndView;
