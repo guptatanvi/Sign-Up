@@ -60,7 +60,7 @@ public class UserController {
         return modelAndView;
     }
     @RequestMapping(value="/edit/{name}", method=RequestMethod.POST)
-    public ModelAndView edditingTeam(@ModelAttribute User user, @PathVariable String name) {
+    public ModelAndView editingUser(@ModelAttribute User user, @PathVariable String name) {
 
         ModelAndView modelAndView = new ModelAndView("home");
 
