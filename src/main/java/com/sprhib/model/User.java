@@ -15,18 +15,12 @@ import java.io.Serializable;
 @Table(name = "users")
 
 public class User implements Serializable {
-
-<<<<<<< Updated upstream
   
     @GeneratedValue
+   @Id
     private Integer id;
-  @Id
-=======
+ 
 
-    @GeneratedValue
-    private Integer id;
-    @Id
->>>>>>> Stashed changes
     private String name;
 
     private String email;
